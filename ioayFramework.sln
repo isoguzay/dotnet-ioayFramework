@@ -15,9 +15,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ioayFramework.Northwind.Mvc
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ioayFramework.Northwind.MvcWebUI.Tests", "ioayFramework.Northwind.MvcWebUI.Tests\ioayFramework.Northwind.MvcWebUI.Tests.csproj", "{86C39477-1F68-4189-B7C0-57498E886F9B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ioayFramework.Northwind.DataAccess.Test", "ioayFramework.DataAccess.Test\ioayFramework.Northwind.DataAccess.Test.csproj", "{8AAD0FCC-F65E-48C2-8FB0-642D596143CD}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ioayFramework.DataAccess.Tests", "ioayFramework.DataAccess.Test\ioayFramework.DataAccess.Tests.csproj", "{8AAD0FCC-F65E-48C2-8FB0-642D596143CD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ioayFramework.Northwind.Business.Test", "ioayFramework.Northwind.Business.Test\ioayFramework.Northwind.Business.Test.csproj", "{45337A2D-8125-4250-B714-5D1E4EADCFBC}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ioayFramework.Northwind.Business.Tests", "ioayFramework.Northwind.Business.Test\ioayFramework.Northwind.Business.Tests.csproj", "{45337A2D-8125-4250-B714-5D1E4EADCFBC}"
 EndProject
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "ioayFramework.Northwind.WebApi", "ioayFramework.Northwind.WebApi\ioayFramework.Northwind.WebApi.vbproj", "{FA72DC58-AE2E-49E8-94D0-41F45F83DD9A}"
 EndProject
