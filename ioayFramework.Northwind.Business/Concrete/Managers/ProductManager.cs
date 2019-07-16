@@ -5,6 +5,8 @@ using ioayFramework.Northwind.Entities.Concrete;
 using ioayFramework.Core.Aspects.PostSharp;
 using System.Collections.Generic;
 using ioayFramework.Core.Aspects.PostSharp.TransactionAspects;
+using ioayFramework.Core.CrossCuttingConcerns.Caching.Microsoft;
+using ioayFramework.Core.Aspects.PostSharp.CacheAspects;
 
 namespace ioayFramework.Northwind.Business.Concrete.Managers
 {
@@ -18,11 +20,13 @@ namespace ioayFramework.Northwind.Business.Concrete.Managers
         }
 
         [FluentValidationAspect(typeof(ProductValidator))]
+        [CacheRemoveAspect(typeof(MemoryCacheManager))]
         public Product Add(Product product)
         {
             return _productDal.Add(product);
         }
 
+        [CacheAspect(typeof(MemoryCacheManager),120)]
         public List<Product> GetAll()
         {
             return _productDal.GetList();
@@ -45,7 +49,5 @@ namespace ioayFramework.Northwind.Business.Concrete.Managers
             _productDal.Add(product1);
             _productDal.Update(product2);
         }
-
-        
     }
 }
