@@ -1,14 +1,10 @@
-﻿using ioayFramework.Core.CrossCuttingConcerns.Validation.FluentValidation;
-using ioayFramework.Northwind.Business.Abstract;
+﻿using ioayFramework.Northwind.Business.Abstract;
 using ioayFramework.Northwind.Business.ValidationRules.FluentValidation;
 using ioayFramework.Northwind.DataAccess.Abstract;
 using ioayFramework.Northwind.Entities.Concrete;
 using ioayFramework.Core.Aspects.PostSharp;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using ioayFramework.Core.Aspects.PostSharp.TransactionAspects;
 
 namespace ioayFramework.Northwind.Business.Concrete.Managers
 {
@@ -42,5 +38,14 @@ namespace ioayFramework.Northwind.Business.Concrete.Managers
         {
             return _productDal.Update(product);
         }
+
+        [TransactionScopeAspect]
+        public void TransactionalOperation(Product product1, Product product2)
+        {
+            _productDal.Add(product1);
+            _productDal.Update(product2);
+        }
+
+        
     }
 }
