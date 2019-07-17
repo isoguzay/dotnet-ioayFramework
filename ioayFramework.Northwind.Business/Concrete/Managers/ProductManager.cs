@@ -7,6 +7,8 @@ using System.Collections.Generic;
 using ioayFramework.Core.Aspects.PostSharp.TransactionAspects;
 using ioayFramework.Core.CrossCuttingConcerns.Caching.Microsoft;
 using ioayFramework.Core.Aspects.PostSharp.CacheAspects;
+using ioayFramework.Core.CrossCuttingConcerns.Logging.Log4Net.Loggers;
+using ioayFramework.Core.Aspects.PostSharp.LogAspects;
 
 namespace ioayFramework.Northwind.Business.Concrete.Managers
 {
@@ -26,6 +28,7 @@ namespace ioayFramework.Northwind.Business.Concrete.Managers
             return _productDal.Add(product);
         }
 
+        [LogAspect(typeof(DatabaseLogger))]
         [CacheAspect(typeof(MemoryCacheManager),120)]
         public List<Product> GetAll()
         {
