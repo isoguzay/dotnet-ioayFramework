@@ -1,4 +1,6 @@
-﻿using System;
+﻿using ioayFramework.Core.Utilities.Mvc.Infrastructure;
+using ioayFramework.Northwind.Business.DependencyResolvers.Ninject;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -13,6 +15,8 @@ namespace ioayFramework.Northwind.MvcWebUI
         {
             AreaRegistration.RegisterAllAreas();
             RouteConfig.RegisterRoutes(RouteTable.Routes);
+
+            ControllerBuilder.Current.SetControllerFactory(new NinjectControllerFactory(new BusinessModule()));
         }
     }
 }

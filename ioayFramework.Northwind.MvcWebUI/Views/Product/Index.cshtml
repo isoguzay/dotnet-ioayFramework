@@ -1,0 +1,32 @@
+﻿@model ioayFramework.Northwind.MvcWebUI.Models.ProductCategoryListViewModel
+
+@{
+    Layout=null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title> Howdy World </title>
+</head>
+<body>
+    <div>
+        @foreach(var product in Model.Products)
+        {
+            <span>Product Name : </span>@product.ProductName<br />
+
+            <span>Product Price : </span>@product.UnitPrice
+            <br>
+        }
+    </div>
+
+    <div>
+        @foreach (var category in Model.Categories)
+        {
+            <span>Category Name : </span> @category.CategoryName <br />
+        }
+    </div>
+</body>
+</html>
+

@@ -44,7 +44,7 @@ namespace ioayFramework.Core.Aspects.PostSharp.CacheAspects
 
             var arguments = args.Arguments.ToList();
 
-            var key = string.Format("{0}{(1)}", methodName,
+            var key = string.Format("{0}{1}", methodName,
                 string.Join(",", arguments.Select(x => x != null ? x.ToString():"<Null>")));
 
             if (_cacheManager.IsAdd(key))

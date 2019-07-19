@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace ioayFramework.Core.CrossCuttingConcerns.Logging.Log4Net
 {
+    [Serializable]
     public class LoggerService
     {
         private ILog _log;

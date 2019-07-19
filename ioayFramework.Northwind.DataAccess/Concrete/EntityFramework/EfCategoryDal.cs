@@ -11,5 +11,12 @@ namespace ioayFramework.Northwind.DataAccess.Concrete.EntityFramework
 {
     public class EfCategoryDal : EfEntityRepositoryBase<Category,NorthwindContext>,ICategoryDal
     {
+        //public List<Category> GetCategories()
+        //{
+        //    using (NorthwindContext context = new NorthwindContext())
+        //    {
+
+        //    }
+        //}
     }
 }
