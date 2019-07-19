@@ -12,6 +12,8 @@ using ioayFramework.Core.Aspects.PostSharp.LogAspects;
 
 namespace ioayFramework.Northwind.Business.Concrete.Managers
 {
+    /*If logaspect decleres the beginnig at class, all methods will log*/
+
     public class ProductManager : IProductService
     {
         private IProductDal _productDal;
