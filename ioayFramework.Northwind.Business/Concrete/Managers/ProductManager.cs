@@ -9,6 +9,10 @@ using ioayFramework.Core.CrossCuttingConcerns.Caching.Microsoft;
 using ioayFramework.Core.Aspects.PostSharp.CacheAspects;
 using ioayFramework.Core.CrossCuttingConcerns.Logging.Log4Net.Loggers;
 using ioayFramework.Core.Aspects.PostSharp.LogAspects;
+using ioayFramework.Core.Aspects.PostSharp.ExceptionAspects;
+using ioayFramework.Core.Aspects.PostSharp.PerformanceAspects;
+using System.Threading;
+using ioayFramework.Core.Aspects.PostSharp.AuthorizationAspects;
 
 namespace ioayFramework.Northwind.Business.Concrete.Managers
 {
@@ -25,17 +29,18 @@ namespace ioayFramework.Northwind.Business.Concrete.Managers
 
         [FluentValidationAspect(typeof(ProductValidator))]
         [CacheRemoveAspect(typeof(MemoryCacheManager))]
-        [LogAspect(typeof(FileLogger))]
         public Product Add(Product product)
         {
             return _productDal.Add(product);
         }
 
         [CacheAspect(typeof(MemoryCacheManager),120)]
-        [LogAspect(typeof(DatabaseLogger))]
-        [LogAspect(typeof(FileLogger))]
+        [PerformanceCounterAspect(1)]
+        [SecuredOperation(Roles="Admin, Editor")]
         public List<Product> GetAll()
         {
+            //Testing for Performance Aspect
+            Thread.Sleep(3000);
             return _productDal.GetList();
         }
 
@@ -50,6 +55,7 @@ namespace ioayFramework.Northwind.Business.Concrete.Managers
             return _productDal.Update(product);
         }
 
+        [FluentValidationAspect(typeof(ProductValidator))]
         [TransactionScopeAspect]
         public void TransactionalOperation(Product product1, Product product2)
         {

@@ -3,11 +3,8 @@ using ioayFramework.Core.CrossCuttingConcerns.Logging.Log4Net;
 using PostSharp.Aspects;
 using PostSharp.Extensibility;
 using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ioayFramework.Core.Aspects.PostSharp.LogAspects
 {

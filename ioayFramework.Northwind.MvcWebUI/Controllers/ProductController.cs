@@ -43,8 +43,26 @@ namespace ioayFramework.Northwind.MvcWebUI.Controllers
             });
 
             return "Added Product";
-
         }
+        
+        public string AddUpdate()
+        {
+            _productService.TransactionalOperation(new Product
+            {
+                CategoryId = 1,
+                ProductName = "Laptop - Isoguzay",
+                QuantityPerUnit = "1",
+                UnitPrice = 25
+            },new Product
+            {
+                CategoryId = 1,
+                ProductName = "Laptop - WhoAmI",
+                QuantityPerUnit = "1",
+                UnitPrice = 30,
+                ProductID = 2
+            });
 
+            return "Done";
+        }
     }
 }

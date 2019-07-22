@@ -1,7 +1,8 @@
-﻿using ioayFramework.Core.Aspects.PostSharp.LogAspects;
+﻿using ioayFramework.Core.Aspects.PostSharp.ExceptionAspects;
+using ioayFramework.Core.Aspects.PostSharp.LogAspects;
+using ioayFramework.Core.Aspects.PostSharp.PerformanceAspects;
 using ioayFramework.Core.CrossCuttingConcerns.Logging.Log4Net.Loggers;
 using System.Reflection;
-using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 // General Information about an assembly is controlled through the following
@@ -16,6 +17,8 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 [assembly: LogAspect(typeof(DatabaseLogger), AttributeTargetTypes = "ioayFramework.Northwind.Business.Concrete.Managers.*")]
+[assembly: ExceptionLogAspect(typeof(DatabaseLogger), AttributeTargetTypes = "ioayFramework.Northwind.Business.Concrete.Managers.*")]
+[assembly: PerformanceCounterAspect(AttributeTargetTypes = "ioayFramework.Northwind.Business.Concrete.Managers.*")]
 // Setting ComVisible to false makes the types in this assembly not visible
 // to COM components.  If you need to access a type in this assembly from
 // COM, set the ComVisible attribute to true on that type.
