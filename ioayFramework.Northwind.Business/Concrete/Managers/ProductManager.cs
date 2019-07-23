@@ -36,7 +36,7 @@ namespace ioayFramework.Northwind.Business.Concrete.Managers
 
         [CacheAspect(typeof(MemoryCacheManager),120)]
         [PerformanceCounterAspect(1)]
-        [SecuredOperation(Roles="Admin, Editor")]
+        [SecuredOperation(Roles="Admin,Editor")]
         public List<Product> GetAll()
         {
             //Testing for Performance Aspect

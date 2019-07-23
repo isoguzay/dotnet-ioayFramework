@@ -17,9 +17,10 @@ namespace ioayFramework.Core.Aspects.PostSharp.AuthorizationAspects
         {
             string[] roles = Roles.Split(',');
             bool isAuthorized = false;
+
             for (int i = 0; i < roles.Length; i++)
             {
-                if (!System.Threading.Thread.CurrentPrincipal.IsInRole(roles[i]))
+                if (System.Threading.Thread.CurrentPrincipal.IsInRole(roles[i]))
                 {
                     isAuthorized = true;
                 }
