@@ -19,8 +19,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ioayFramework.DataAccess.Te
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ioayFramework.Northwind.Business.Tests", "ioayFramework.Northwind.Business.Test\ioayFramework.Northwind.Business.Tests.csproj", "{45337A2D-8125-4250-B714-5D1E4EADCFBC}"
 EndProject
-Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "ioayFramework.Northwind.WebApi", "ioayFramework.Northwind.WebApi\ioayFramework.Northwind.WebApi.vbproj", "{FA72DC58-AE2E-49E8-94D0-41F45F83DD9A}"
-EndProject
 Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "ioayFramework.Northwind.WcfService", "ioayFramework.Northwind.WcfService\", "{69CF715A-72F9-40CB-93A6-4075624F3551}"
 	ProjectSection(WebsiteProperties) = preProject
 		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.7.1"
@@ -42,6 +40,8 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "ioayFramework.Northwind.Wcf
 		SlnRelativePath = "ioayFramework.Northwind.WcfService\"
 		DefaultWebSiteLanguage = "Visual C#"
 	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ioayFramework.Northwind.WebApi.Sample", "ioayFramework.Northwind.WebApi.Sample\ioayFramework.Northwind.WebApi.Sample.csproj", "{0EA04A51-BE18-4542-A0D4-732B74E720CA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -81,14 +81,14 @@ Global
 		{45337A2D-8125-4250-B714-5D1E4EADCFBC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{45337A2D-8125-4250-B714-5D1E4EADCFBC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{45337A2D-8125-4250-B714-5D1E4EADCFBC}.Release|Any CPU.Build.0 = Release|Any CPU
-		{FA72DC58-AE2E-49E8-94D0-41F45F83DD9A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{FA72DC58-AE2E-49E8-94D0-41F45F83DD9A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{FA72DC58-AE2E-49E8-94D0-41F45F83DD9A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{FA72DC58-AE2E-49E8-94D0-41F45F83DD9A}.Release|Any CPU.Build.0 = Release|Any CPU
 		{69CF715A-72F9-40CB-93A6-4075624F3551}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{69CF715A-72F9-40CB-93A6-4075624F3551}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{69CF715A-72F9-40CB-93A6-4075624F3551}.Release|Any CPU.ActiveCfg = Debug|Any CPU
 		{69CF715A-72F9-40CB-93A6-4075624F3551}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{0EA04A51-BE18-4542-A0D4-732B74E720CA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0EA04A51-BE18-4542-A0D4-732B74E720CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0EA04A51-BE18-4542-A0D4-732B74E720CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0EA04A51-BE18-4542-A0D4-732B74E720CA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
