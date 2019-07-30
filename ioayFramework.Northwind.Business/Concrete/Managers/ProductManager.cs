@@ -10,6 +10,8 @@ using ioayFramework.Core.Aspects.PostSharp.CacheAspects;
 using ioayFramework.Core.Aspects.PostSharp.PerformanceAspects;
 using System.Threading;
 using ioayFramework.Core.Aspects.PostSharp.AuthorizationAspects;
+using AutoMapper;
+using ioayFramework.Core.Utilities.Mappings;
 
 namespace ioayFramework.Northwind.Business.Concrete.Managers
 {
@@ -18,10 +20,12 @@ namespace ioayFramework.Northwind.Business.Concrete.Managers
     public class ProductManager : IProductService
     {
         private IProductDal _productDal;
+        private IMapper _mapper;
 
-        public ProductManager(IProductDal productDal)
+        public ProductManager(IProductDal productDal, IMapper mapper)
         {
             _productDal = productDal;
+            _mapper = mapper;
         }
 
         [FluentValidationAspect(typeof(ProductValidator))]
@@ -33,12 +37,15 @@ namespace ioayFramework.Northwind.Business.Concrete.Managers
 
         [CacheAspect(typeof(MemoryCacheManager),120)]
         [PerformanceCounterAspect(1)]
-        //[SecuredOperation(Roles="Admin,Editor")]
+        [SecuredOperation(Roles="Admin,Editor")]
         public List<Product> GetAll()
         {
             //Testing for Performance Aspect
             Thread.Sleep(3000);
-            return _productDal.GetList();
+            //AutoMapper Sample
+            //List<Product> products = AutoMapperHelper.MapToSameTypeList(_productDal.GetList());
+            List<Product> products = _mapper.Map<List<Product>>(_productDal.GetList());
+            return products;
         }
 
         public Product GetById(int productId)

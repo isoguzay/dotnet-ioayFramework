@@ -14,7 +14,7 @@ namespace ioayFramework.Core.Utilities.Mvc.Infrastructure
     {
         IKernel _kernel;
 
-        public NinjectControllerFactory(INinjectModule module)
+        public NinjectControllerFactory(params INinjectModule[] module)
         {
             _kernel = new StandardKernel(module);
         }

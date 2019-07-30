@@ -22,6 +22,7 @@ EndProject
 Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "ioayFramework.Northwind.WcfService", "ioayFramework.Northwind.WcfService\", "{69CF715A-72F9-40CB-93A6-4075624F3551}"
 	ProjectSection(WebsiteProperties) = preProject
 		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.7.1"
+		ProjectReferences = "{9db6c767-5f36-4075-a3b5-6d56c96cc2c8}|ioayFramework.Northwind.Business.dll;{88265868-0CB4-49E5-A523-2B0524920105}|ioayFramework.Core.dll;{2AE0322E-E6F9-437A-8824-F2A07FABFFBA}|ioayFramework.Northwind.DataAccess.dll;{C1F9614D-46AD-40F1-87EE-375F2E942EA5}|ioayFramework.Northwind.Entities.dll;"
 		Debug.AspNetCompiler.VirtualPath = "/localhost_10933"
 		Debug.AspNetCompiler.PhysicalPath = "ioayFramework.Northwind.WcfService\"
 		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_10933\"

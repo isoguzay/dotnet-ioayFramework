@@ -65,7 +65,7 @@ namespace ioayFramework.Northwind.WebApi.Sample.App_Start
         private static void RegisterServices(IKernel kernel)
         {
 
-            kernel.Load(new BusinessModule());
+            kernel.Load(new BusinessModule(), new AutoMapperModule());
         }        
     }
 }
